@@ -15,13 +15,13 @@ router.get("/", function (req, res, next) {
 });
 
 router.post("/submitForm", function (req, res, next) {
-  // const review = new Review(req.body);
-  // try {
-  //   review.save();
-  //   res.status(201).json({ review });
-  // } catch (error) {
-  //   res.status(400).json({ error: e.message });
-  // }
+  const review = new Review(req.body);
+  try {
+    review.save();
+    res.status(201).json({ review });
+  } catch (error) {
+    res.status(400).json({ error: e.message });
+  }
   console.log(req.body);
 });
 
