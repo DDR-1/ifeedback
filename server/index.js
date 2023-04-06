@@ -45,14 +45,14 @@ const connectionParams = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 };
-mongoose
-  .connect(url, connectionParams)
-  .then(() => {
-    console.log("Connected to the database ");
-  })
-  .catch((err) => {
-    console.error(`Error connecting to the database. ${err}`);
-  });
+// mongoose;
+// .connect(url, connectionParams)
+// .then(() => {
+//   console.log("Connected to the database ");
+// })
+// .catch((err) => {
+//   console.error(`Error connecting to the database. ${err}`);
+// });
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
