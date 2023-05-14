@@ -6,11 +6,11 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const cors = require("cors");
 
-const mongoose = require("mongoose");
-const { MongoClient } = require("mongodb");
-const Review = require("./models/reviewSchema");
+// const mongoose = require("mongoose");
+// const { MongoClient } = require("mongodb");
+// const Review = require("./models/reviewSchema");
 
-mongoose.set("strictQuery", false);
+// mongoose.set("strictQuery", false);
 
 const routeHandler = require("./routes/handler.js");
 
@@ -32,20 +32,21 @@ app.use("/", routeHandler);
 //   next(createError(404));
 // });
 
-if (process.env.NODE_ENV !== "production") {
-  require("dotenv").config();
-}
+// if (process.env.NODE_ENV !== "production") {
+//   require("dotenv").config();
+// }
 
-const url = process.env.URL;
-const client = new MongoClient(url);
+// const url = process.env.URL;
+// const client = new MongoClient(url);
 
-const dbName = "iFeedback";
+// const dbName = "iFeedback";
 
-const connectionParams = {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-};
-// mongoose;
+// const connectionParams = {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// };
+
+// var db = mongoose
 // .connect(url, connectionParams)
 // .then(() => {
 //   console.log("Connected to the database ");

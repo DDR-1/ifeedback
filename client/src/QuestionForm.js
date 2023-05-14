@@ -11,7 +11,7 @@ function QuestionForm() {
 
   function handleSubmit() {
     let answer = "Answer: " + toAnswer;
-    console.log(answer);
+    // console.log(answer);
     let xhr = new XMLHttpRequest();
     let url = "/submitQuestions";
     xhr.open("POST", url);

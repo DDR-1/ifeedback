@@ -16,14 +16,14 @@ function RatingForm() {
   function handleSubmit(e) {
     e.preventDefault();
     setToSubmit(true);
-    console.log(toRating);
-    console.log(toText);
+    // console.log(toRating);
+    // console.log(toText);
     console.log(window.location.href);
     let xhr = new XMLHttpRequest();
     // var url = 'https://learning.se.com/i-feedback/feedback.php';
     let url = "/submitForm";
     xhr.open("POST", url);
-    let data = { rating: toRating, app: "mll", userId: "", comment: toText };
+    let data = { rating: toRating, app: "mll", userId: "user2", comment: toText , answer: ""};
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.onload = () => console.log(xhr.responseText);
     xhr.send(JSON.stringify(data));
