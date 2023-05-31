@@ -8,7 +8,7 @@ router.get("/", function (req, res, next) {
   res.send("API is working properly");
 });
 
-router.post("/backend/submitForm", async function (req, res, next) {
+router.post("/submitForm", async function (req, res, next) {
   try {
     user = req.body.userId;
     let rev = new Review(req.body);
@@ -21,7 +21,7 @@ router.post("/backend/submitForm", async function (req, res, next) {
   // console.log(req.body);
 });
 
-router.post("/backend/submitQuestions",async function (req, res, next) {
+router.post("/submitQuestions",async function (req, res, next) {
   // var myquery = { userId: user };
   // var newvalues = { $set: {answer: req.body.questions} };
   // db.collection("iFeedback").updateOne(myquery, newvalues, function(err, res) {
@@ -36,7 +36,7 @@ router.post("/backend/submitQuestions",async function (req, res, next) {
   // console.log(req.body);
 });
 
-router.get("/backend/getSubmissions", async function (req, res, next) {
+router.get("/getSubmissions", async function (req, res, next) {
   let ans = await Review.findOne({ userId: "SESA705409"});
   console.log(await Answer.findById(ans.reviewAnswer.toHexString()).populate("rev"));
   res.sendStatus(200);
