@@ -20,7 +20,8 @@ function QuestionForm() {
     let answer = dict[toAnswer];
     // console.log(answer);
     let xhr = new XMLHttpRequest();
-    let url = "/backend/submitQuestions";
+    let url = "http://localhost:4000/backend/submitQuestions";
+    // let url = "/backend/submitQuestions";
     xhr.open("POST", url);
     let data = { questions: answer };
     xhr.setRequestHeader("Content-Type", "application/json");
