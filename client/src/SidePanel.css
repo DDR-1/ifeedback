@@ -160,13 +160,13 @@ body{
     border-radius: 0.5rem;
     background-color: transparent;
     height: 3rem;
-    width: 5rem;
+    width: 6rem;
     color: #9FA0A4;
     box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
     margin: 1rem 0.5rem;
 }
 .answerArea{
-    margin: 0.2rem 0.2rem 0rem 0.4rem;
+    margin: 0.2rem 0.2rem 0.2rem 0.4rem;
 }
 
 .thanksTitle{

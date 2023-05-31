@@ -5,7 +5,20 @@ const reviewSchema = new mongoose.Schema({
   app: String,
   userId: String,
   comment: String,
-  answer: String,
+  reviewAnswer: {
+    type: mongoose.Schema.Types.ObjectId,
+    rev: 'Answer',
+  }
 });
 
-module.exports = mongoose.model("Review", reviewSchema);
+const answerSchema = new mongoose.Schema({
+  rev: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Review',
+  },
+  answer: String,
+})
+
+const Review = mongoose.model("Review", reviewSchema);
+const Answer = mongoose.model("Answer", answerSchema);
+module.exports ={Review, Answer}

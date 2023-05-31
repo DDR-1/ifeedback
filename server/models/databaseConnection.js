@@ -7,7 +7,8 @@ if (process.env.NODE_ENV !== "production") {
     require("dotenv").config();
   }
   
-const url = "mongodb+srv://deveshdr02:"+process.env.PASSWORD+"@cluster0.amhnwn4.mongodb.net/?retryWrites=true&w=majority";
+const url = "mongodb+srv://"+process.env.USER+":"+process.env.PASSWORD+"@cluster0.amhnwn4.mongodb.net/?retryWrites=true&w=majority";
+// const url = process.env.URL;
 const client = new MongoClient(url);
 
 const connectionParams = {

@@ -6,16 +6,23 @@ function QuestionForm() {
   const [toAnswer, setToAnswer] = React.useState(0);
 
   function prevSubmit(e) {
+    e.stopPropagation();
     e.preventDefault();
   }
 
   function handleSubmit() {
-    let answer = "Answer: " + toAnswer;
+    var dict = {
+      1: "UI/UX",
+      2 : "Speed",
+      3: "Content",
+      4 : "Accessibility"
+    };
+    let answer = dict[toAnswer];
     // console.log(answer);
     let xhr = new XMLHttpRequest();
-    let url = "/submitQuestions";
+    let url = "/backend/submitQuestions";
     xhr.open("POST", url);
-    let data = { questions: answer, app: "mll", userId: "" };
+    let data = { questions: answer };
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.onload = () => console.log(xhr.responseText);
     xhr.send(JSON.stringify(data));
@@ -27,26 +34,26 @@ function QuestionForm() {
   }
   return (
     <div>
-      <form id="questionForm">
-        <div className="title">Answer questions</div>
+      <form id="questionForm" onSubmit={prevSubmit}>
+        <div className="title">What feature would you like to be improved upon?</div>
         <div className="answerArea">
           <button
             type="submit"
             className="answerbtn"
             onClick={() => setToAnswer(1)}
           >
-            Answer 1
+            UI/UX
           </button>
           <button className="answerbtn" onClick={() => setToAnswer(2)}>
-            Answer 2
+            Speed 
           </button>
         </div>
         <div className="answerArea">
           <button className="answerbtn" onClick={() => setToAnswer(3)}>
-            Answer 3
+            Content
           </button>
           <button className="answerbtn" onClick={() => setToAnswer(4)}>
-            Answer 4
+            Accessibility
           </button>
         </div>
       </form>

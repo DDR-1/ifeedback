@@ -20,10 +20,9 @@ function RatingForm() {
     // console.log(toText);
     console.log(window.location.href);
     let xhr = new XMLHttpRequest();
-    // var url = 'https://learning.se.com/i-feedback/feedback.php';
-    let url = "/submitForm";
+    let url = "/backend/submitForm";
     xhr.open("POST", url);
-    let data = { rating: toRating, app: "MLL", userId: "SESA"+Math.floor(Math.random()*1000000), comment: toText , answer: ""};
+    let data = { rating: toRating, app: "MLL", userId: "SESA"+Math.floor(Math.random()*1000000), comment: toText};
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.onload = () => console.log(xhr.responseText);
     xhr.send(JSON.stringify(data));
