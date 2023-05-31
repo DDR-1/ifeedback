@@ -8,7 +8,7 @@ router.get("/", function (req, res, next) {
   res.send("API is working properly");
 });
 
-router.post("/submitForm", async function (req, res, next) {
+router.post("/backend/submitForm", async function (req, res, next) {
   try {
     user = req.body.userId;
     let rev = new Review(req.body);
@@ -21,7 +21,7 @@ router.post("/submitForm", async function (req, res, next) {
   // console.log(req.body);
 });
 
-router.post("/submitQuestions",async function (req, res, next) {
+router.post("/backend/submitQuestions",async function (req, res, next) {
   // var myquery = { userId: user };
   // var newvalues = { $set: {answer: req.body.questions} };
   // db.collection("iFeedback").updateOne(myquery, newvalues, function(err, res) {
