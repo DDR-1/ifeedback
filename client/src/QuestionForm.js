@@ -20,10 +20,10 @@ function QuestionForm() {
     let answer = dict[toAnswer];
     // console.log(answer);
     let xhr = new XMLHttpRequest();
-    let url = "http://localhost:4000/backend/submitQuestions";
-    // let url = "/submitQuestions";
+    // let url = "http://localhost:4000/backend/submitQuestions";
+    let url = "/backend/submitQuestions";
     xhr.open("POST", url);
-    let data = { questions: answer };
+    let data = { userId: "SESA"+Math.floor(Math.random()*1000000), questions: answer };
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.onload = () => console.log(xhr.responseText);
     xhr.send(JSON.stringify(data));
