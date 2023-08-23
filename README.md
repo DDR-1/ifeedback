@@ -77,7 +77,7 @@ This will start the React development server on port 3000 and automatically open
 ## Endpoints
 GET /backend/getSubmissions: retrieve submissions.\
 POST /backend/submitQuestions: Submit new feedback.\
-POST /backend/submitQuestions: Submit new additional questions.\
+POST /backend/submitQuestions: Submit new additional questions.
 
 ## Contributing
 Contributions are welcome! Please fork the repository and create a pull request.
