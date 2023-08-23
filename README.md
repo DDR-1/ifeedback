@@ -75,8 +75,8 @@ This will start the Express server on port 3001 by default.
 This will start the React development server on port 3000 and automatically open a web browser to view the application.
 
 ## Endpoints
-GET /backend/getSubmissions: retrieve submissions.
-POST /backend/submitQuestions: Submit new feedback.
+GET /backend/getSubmissions: retrieve submissions.\n
+POST /backend/submitQuestions: Submit new feedback.\n
 POST /backend/submitQuestions: Submit new additional questions.
 
 ## Contributing
