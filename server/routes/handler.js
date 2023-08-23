@@ -3,6 +3,7 @@ const router = express.Router();
 const {Review, Answer} = require("../models/reviewSchema");
 // var db = require("../models/mongoDatabaseConnection");
 var con = require("../models/sqlDatabaseConnection");
+// let user = "";
 
 router.get("/", function (req, res, next) {
   res.send("API is working properly");
@@ -18,6 +19,7 @@ router.post("/backend/submitForm", async function (req, res, next) {
   //   res.status(400).json({ error: error.message });
   // }
 
+  // user = req.body.userId;
   con.connect(function(err) {
     if (err) throw err;
     var sql = "INSERT INTO `ifeedback`.`reviews` (`userid`, `rating`, `application`, `comments`) VALUES ('"+req.body.userId+"', '"+req.body.rating+"', '"+req.body.app+"', '"+req.body.comment+"');";
@@ -41,9 +43,10 @@ router.post("/backend/submitQuestions",async function (req, res, next) {
   // await ans.save();
   // await userRev.save();
 
+
   con.connect(function(err) {
     if (err) throw err;
-    var sql = "INSERT INTO `ifeedback`.`answers` (`userid`, `answers`) VALUES ('"+req.body.userId+"', '"+req.body.questions+"');";
+    var sql = "INSERT INTO `ifeedback`.`answers` (`userid`, `answers`) VALUES ('"+user+"', '"+req.body.questions+"');";
     con.query(sql, function (err, result) {
       if (err) throw err;
     });
