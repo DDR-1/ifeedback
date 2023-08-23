@@ -48,11 +48,11 @@ Before you begin, ensure you have the following installed:
     ```
 
 ## Configuration
-Server Configuration
+### Server Configuration
 
 Rename .env.example in the server directory to .env and provide the necessary configuration options, such as the MongoDB connection URI.
 
-## Client Configuration
+### Client Configuration
 
 Open client/src/config.js and update the API_BASE_URL to point to your server's API endpoint.
 
